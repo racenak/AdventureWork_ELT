@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  sqlserver:
+    image: adventureworks-db:latest
+    hostname: sqlserver
+    container_name: sqlserver-container
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "YourStrong!Passw0rd"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: always
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.1.5
+    user: '101:101'
+    container_name: clickhouse
+    hostname: clickhouse
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
+    ports:
+      - '8123:8123'
+      - '9000:9000'
+    environment:
+      CLICKHOUSE_USER: admin
+      CLICKHOUSE_PASSWORD: admin
+    restart: always
+
+
+volumes:
+  clickhouse_data:
+  clickhouse_logs:
+  sqlserver_data:

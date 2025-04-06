@@ -1,0 +1,56 @@
+version: 2
+
+sources:
+  - name: landing
+    tables:
+      - name: raw_customer
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_customer"]
+
+      - name: raw_person
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_person"]
+
+      - name: raw_address
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_address"]
+
+      - name: raw_addresstype
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_addresstype"]
+
+      - name: raw_businessentityaddress
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_businessentityaddress"]
+
+      - name: raw_countryregion
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_countryregion"]
+
+      - name: raw_stateprovince
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_stateprovince"]
+
+      - name: raw_emailaddress
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_emailaddress"]
+
+      - name: raw_personphone
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_personphone"]
+
+      - name: raw_phonenumbertype
+        meta: 
+          dagster: 
+            asset_key: ["target","landing","raw_phonenumbertype"]
+
+    

@@ -1,0 +1,7 @@
+version: 2
+
+source:
+  - name: landing
+    tables:
+      - name: raw_customer
+      - name: raw_person

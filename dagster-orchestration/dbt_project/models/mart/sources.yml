@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: staging
+    tables:
+      - name: stg_address
+        meta: 
+          dagster: 
+            asset_key: ["stg_address"]
+
+      - name: stg_customer
+        meta: 
+          dagster: 
+            asset_key: ["stg_customer"]
