@@ -3,9 +3,9 @@ dbt_project:
   outputs:
     dev:
       type: clickhouse
-      schema: staging
       driver: http # http or native.  If not configured, this will be auto-determined based on the port setting
       host: localhost
+      schema: staging
       port: 8123  # Defaults to 8123, 8443, 9000, 9440 depending on the secure and driver settings 
       user: admin # User for all database operations
       password: admin # Password for the user

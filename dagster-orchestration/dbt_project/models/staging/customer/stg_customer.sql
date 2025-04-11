@@ -14,6 +14,6 @@ select  CustomerID,
         EmailPromotion ,
         AdditionalContactInfo ,
         Demographics 
-from {{ ref('raw_customer') }}
-inner join {{ ref('raw_person') }}
+from {{ source('landing','raw_customer') }}
+inner join {{ source('landing','raw_person') }}
 on raw_person.BusinessEntityID = raw_customer.PersonID

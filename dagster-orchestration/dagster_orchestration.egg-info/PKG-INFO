@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: dagster_orchestration
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: <3.13,>=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: dagster>=1.5.0
+Requires-Dist: dagster-dbt>=1.5.0
+Provides-Extra: dev
+Requires-Dist: dagster-webserver; extra == "dev"
+Requires-Dist: pytest; extra == "dev"

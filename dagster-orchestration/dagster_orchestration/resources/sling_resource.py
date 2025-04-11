@@ -1,6 +1,5 @@
 from dagster_embedded_elt.sling import SlingConnectionResource, SlingResource
 
-
 source = SlingConnectionResource(
     name="MY_SQLSERVER",
     type="sqlserver",

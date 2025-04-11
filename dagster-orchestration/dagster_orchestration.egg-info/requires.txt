@@ -1,0 +1,6 @@
+dagster>=1.5.0
+dagster-dbt>=1.5.0
+
+[dev]
+dagster-webserver
+pytest

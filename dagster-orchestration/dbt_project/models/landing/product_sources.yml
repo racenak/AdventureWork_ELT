@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: landing 
+  
+    tables:
+      - name: raw_product
+        meta:
+          dagster: 
+            asset_key: ["target","raw_product"]
+
+      - name: raw_productsubcategory
+        meta: 
+          dagster: 
+            asset_key: ["target","raw_productsubcategory"]
+
+      - name: raw_productcategory
+        meta: 
+          dagster: 
+            asset_key: ["target","raw_productcategory"]
+
+      - name: raw_model_description_culture
+        meta: 
+          dagster: 
+            asset_key: ["target","raw_model_description_culture"]
+
+      - name: raw_model_description
+        meta: 
+          dagster: 
+            asset_key: ["target","raw_model_description"]
+      
+      - name: raw_culture
+        meta: 
+          dagster: 
+            asset_key: ["target","raw_culture"]
+      
+      - name: raw_unitmeasure
+        meta:
+          dagster:
+            asset_key: ["target","raw_unitmeasure"]

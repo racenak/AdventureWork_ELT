@@ -20,10 +20,9 @@ Email AS (
 ),
 stg_personal_info AS(
     SELECT 
-        p.BusinessEntityID,
+        p.BusinessEntityID as BusinessEntityID,
         p.PhoneNumber,
         pnt.Name AS PhoneNumberTypeName,
-        e.EmailAddressID,
         e.EmailAddress
     FROM PhoneData AS p
     LEFT JOIN Email AS e

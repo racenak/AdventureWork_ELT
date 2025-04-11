@@ -1,4 +1,4 @@
-from typing import Any, Mapping, Optional
+from typing import Any, Mapping
 from dagster_sling import SlingResource, sling_assets, DagsterSlingTranslator
 
 class CustomeSlingDagsterTranslator(DagsterSlingTranslator):
@@ -35,7 +35,8 @@ BASE_CONFIG = {
             "update_key": "BusinessEntityID"
         },
         "Person.CountryRegion": {
-            "object": "landing.raw_countryregion"
+            "object": "landing.raw_countryregion",
+            "mode": "full-refresh"
         },
         "Person.StateProvince": {
             "object": "landing.raw_stateprovince",
@@ -60,7 +61,5 @@ BASE_CONFIG = {
 
 @sling_assets(replication_config=BASE_CONFIG,
               dagster_sling_translator=CustomeSlingDagsterTranslator())
-def ingest(context, sling: SlingResource):
+def ingest_customer(context, sling: SlingResource):
     yield from sling.replicate(context=context, debug=True)
-
-

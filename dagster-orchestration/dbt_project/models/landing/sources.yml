@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: landing
+    schema: landing
     tables:
       - name: raw_customer
         meta: 

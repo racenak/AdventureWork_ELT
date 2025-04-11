@@ -8,8 +8,6 @@ from collections.abc import Mapping
 dbt_project_directory = Path(__file__).resolve().parent.parent.parent / "dbt_project"
 dbt_project = DbtProject(project_dir=dbt_project_directory)
 
-
-# Compiles the dbt project & allow Dagster to build an asset graph
 dbt_project.prepare_if_dev()
 
 class CustomDagsterDbtTranslator(DagsterDbtTranslator):
@@ -23,4 +21,3 @@ class CustomDagsterDbtTranslator(DagsterDbtTranslator):
 @dbt_assets(manifest=dbt_project.manifest_path, dagster_dbt_translator=CustomDagsterDbtTranslator())
 def dbt_models(context: dg.AssetExecutionContext, dbt: DbtCliResource):
    yield from dbt.cli(["build"], context=context).stream()
-
